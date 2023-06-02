@@ -80,6 +80,27 @@ load_more = async() =>
   
 }
 
+  hapus_data =(id)=>
+  {
+
+     console.log(id);
+     axios.delete('https://contact.herokuapp.com/contact/'+id)
+    .then(function (responseJson) {
+      console.log(responseJson.data);
+      get_data();
+    //   if (responseJson.status == 200)
+    //   {
+    //     // console.log(responseJson.data.data.age)
+    //     // setnama_depan(responseJson.data.data.firstName)
+    //     // setnama_belakang(responseJson.data.data.lastName)
+    //     // setumur(responseJson.data.data.age)
+    //     // setgambar(responseJson.data.data.photo)
+    //   }
+
+      
+    })
+  }
+
   useEffect(async() =>
     {
       // await set_tanggal();
@@ -149,8 +170,26 @@ load_more = async() =>
                                                 <View style={{flex:1}}>
                                                         <TouchableOpacity
                                                             style={{backgroundColor: 'red',width:'80%',borderRadius: 20,marginTop:10,height:40}}
-                                                            onPress={async() =>{
-                                                            }}>
+                                                            onPress={() =>Alert.alert(
+                                                                'CONFIRMATION',
+                                                                'Are You Sure?',
+                                                                [
+                                                                {
+                                                                    text: 'OK',
+                                                                    onPress: () => {
+                                                                        hapus_data(item.id)
+                        
+                                                                    }
+                                                                },
+                                                                {
+                                                                    text: 'CANCEL',
+                                                                },
+                                                                ],
+                                
+                                                                {
+                                                                cancelable: true
+                                                                }
+                                                                )}>
                                                             <Text style={{color: 'white',fontWeight: 'bold',textAlign: 'center',marginTop: 10}}>Hapus</Text>
                                                         </TouchableOpacity>
                                                 </View>

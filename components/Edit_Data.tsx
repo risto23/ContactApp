@@ -104,6 +104,8 @@ const logoWidth = Math.round(dimensions.width * 9 / 16);
     })
   }
 
+  
+
   validasi =()=>
   {
     let NamaDepan = nama_depan;
