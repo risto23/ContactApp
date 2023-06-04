@@ -18,9 +18,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //LIST COMPONENT CAMPUR
   
-import Menu_Awal from './components/Menu_Awal';
-import Add_Data from './components/Add_Data';
-import Edit_Data from './components/Edit_Data';
+import Menu_Awal from './src/components/Menu_Awal';
+import Add_Data from './src/components/Add_Data';
+import Edit_Data from './src/components/Edit_Data';
 
 
 
